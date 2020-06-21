@@ -13,7 +13,7 @@ export class IndexComponent implements OnInit {
 
   public iconUrl: Object;
   public zoom = 2;
-  public sateliteData$: Observable<ISSResponse> = interval(5000)
+  public sateliteData$: Observable<ISSResponse> = interval(4000)
     .pipe(
       startWith(this._httpService.getLocation$()),
       switchMap(_ => this._httpService.getLocation$()),

@@ -1,7 +1,11 @@
 .container-fluid {
-  
-  color: #ffffff;
-
+  h6 {
+    color: black;
+  }
+  h5,
+  p {
+    color: #ffffff;
+  }
   h1,
   h3 {
     font-family: titleFont;
@@ -27,7 +31,5 @@
     .card-body {
       background-color: #10292e;
     }
-
   }
-
 }

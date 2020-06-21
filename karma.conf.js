@@ -5,6 +5,9 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    files: [
+      { pattern: 'src/app/shared/mocks/google-api.js', watched: false },
+    ],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
