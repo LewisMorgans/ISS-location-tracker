@@ -1,6 +1,8 @@
 interface ISSResponse {
-    latitude: number,
-    longitude: number
+    iss_position: {
+        latitude: number,
+        longitude: number
+    },
+    message: string,
+    timestramp: number
 }
-
-

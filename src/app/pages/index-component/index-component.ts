@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http-service/http.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'index-component',
@@ -11,11 +11,13 @@ import { map } from 'rxjs/operators';
 
 export class IndexComponent implements OnInit {
 
-  public sateliteData$: Observable<ISSResponse> = this._httpService.getLocation$()
-    .pipe(map(x => x));
+  public sateliteData$: Observable<ISSResponse> = this._httpService.getLocation$().pipe(
+    tap(x => console.log('LOG: ', x))
+  )
 
   constructor(private readonly _httpService: HttpService) { }
 
-  ngOnInit() { }
+  ngOnInit() {     
+  }
 
 }
