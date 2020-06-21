@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-    private endPoint = 'http://api.open-notify.org/iss-now.json';
+    private endPoint = 'https://api.wheretheiss.at/v1/satellites/25544';
 
     constructor(private readonly _http: HttpClient) { }
 
@@ -15,3 +15,4 @@ export class HttpService {
         return this._http.get<ISSResponse>(this.endPoint);
     }
 }
+

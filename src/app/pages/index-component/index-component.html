@@ -1,11 +1,6 @@
-<!-- <agm-map [latitude]="(sateliteData$ | async)?.iss_position.latitude" [longitude]="(sateliteData$ | async)?.iss_position.longitude">
-    <agm-marker [latitude]="(sateliteData$ | async)?.iss_position.latitude" [longitude]="(sateliteData$ | async)?.iss_position.longitude"></agm-marker>
-</agm-map> -->
-
-<!-- <span *ngIf="sateliteData$ | async as data;"> 
-    <h1>{{data.iss_position.latitude}}</h1><br/>
-    <h1>{{data.iss_position.longitude}}</h1>
-</span> -->
+<agm-map  [latitude]="(sateliteData$ | async)?.latitude" [longitude]="(sateliteData$ | async)?.longitude">
+    <agm-marker [latitude]="(sateliteData$ | async)?.latitude" [longitude]="(sateliteData$ | async)?.longitude"></agm-marker>
+</agm-map>
 
 
-<p *ngIf="(sateliteData$ | async)">{{(sateliteData$ | async).iss_position.latitude}}</p>
+{{(sateliteData$ | async)?.latitude}}
