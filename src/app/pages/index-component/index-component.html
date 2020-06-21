@@ -1,17 +1,33 @@
-<agm-map [zoom]="2" [latitude]="(sateliteData$ | async)?.iss_position.latitude"
-    [longitude]="(sateliteData$ | async)?.iss_position.longitude">
-    <agm-marker [iconUrl]="iconUrl" (mouseOver)="window.open()" (mouseOut)="window.close()"
-        [latitude]="(sateliteData$ | async)?.iss_position.latitude"
-        [longitude]="(sateliteData$ | async)?.iss_position.longitude">
-        <agm-info-window #window>
-            <h6>Longitude: {{(sateliteData$ | async)?.iss_position.latitude}} </h6>
-            <h6>Latitude: {{(sateliteData$ | async)?.iss_position.longitude}}</h6>
-        </agm-info-window>
-    </agm-marker>
-</agm-map>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-6 mx-auto map">
+            <div class="card">
+                <agm-map (zoomChange)="updateZoomInput($event)" [zoom]="zoom"
+                    [latitude]="(sateliteData$ | async)?.iss_position.latitude"
+                    [longitude]="(sateliteData$ | async)?.iss_position.longitude">
+                    <agm-marker [iconUrl]="iconUrl" (mouseOver)="window.open()" (mouseOut)="window.close()"
+                        [latitude]="(sateliteData$ | async)?.iss_position.latitude"
+                        [longitude]="(sateliteData$ | async)?.iss_position.longitude">
+                        <agm-info-window #window>
+                            <h6>Longitude: {{(sateliteData$ | async)?.iss_position.latitude}} </h6>
+                            <h6>Latitude: {{(sateliteData$ | async)?.iss_position.longitude}}</h6>
+                        </agm-info-window>
+                    </agm-marker>
+                </agm-map>
+                <div class="card-body">
+                    <h5 class="card-title">Ever wanted to track the International Space Station?</h5>
+                    <p class="card-text">
+                        - Well now you can!<br>
+                        The map above shows you the real time location of the ISS in relation to
+                        earth; using latitude and longitude data from NASA and Norad.<br>
+                        Watch out for every 5 seconds to see it's real time location in relation to Earth moving in
+                        geosynchronous orbit at at close to 28,000 km/h,<br>
+                        at an altitude of 36,000 km!
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
 
-
-
-<h3>initial location</h3><br>
-{{(sateliteData$ | async)?.iss_position.latitude}}<br>
-{{(sateliteData$ | async)?.iss_position.longitude}}
+        </div>
+    </div>
+</div>
