@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-    private endPoint = 'https://api.wheretheiss.at/v1/satellites/25544';
+    private endPoint = 'http://api.open-notify.org/iss-now.json';
 
     constructor(private readonly _http: HttpClient) { }
 

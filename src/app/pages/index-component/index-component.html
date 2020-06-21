@@ -1,6 +1,17 @@
-<agm-map  [latitude]="(sateliteData$ | async)?.latitude" [longitude]="(sateliteData$ | async)?.longitude">
-    <agm-marker [latitude]="(sateliteData$ | async)?.latitude" [longitude]="(sateliteData$ | async)?.longitude"></agm-marker>
+<agm-map [zoom]="2" [latitude]="(sateliteData$ | async)?.iss_position.latitude"
+    [longitude]="(sateliteData$ | async)?.iss_position.longitude">
+    <agm-marker [iconUrl]="iconUrl" (mouseOver)="window.open()" (mouseOut)="window.close()"
+        [latitude]="(sateliteData$ | async)?.iss_position.latitude"
+        [longitude]="(sateliteData$ | async)?.iss_position.longitude">
+        <agm-info-window #window>
+            <h6>Longitude: {{(sateliteData$ | async)?.iss_position.latitude}} </h6>
+            <h6>Latitude: {{(sateliteData$ | async)?.iss_position.longitude}}</h6>
+        </agm-info-window>
+    </agm-marker>
 </agm-map>
 
 
-{{(sateliteData$ | async)?.latitude}}
+
+<h3>initial location</h3><br>
+{{(sateliteData$ | async)?.iss_position.latitude}}<br>
+{{(sateliteData$ | async)?.iss_position.longitude}}
