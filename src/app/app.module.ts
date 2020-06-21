@@ -7,6 +7,9 @@ import { applicationRouter } from './app-routing';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +20,12 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     RouterModule.forRoot(applicationRouter),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCqCr_Kc6Y612VHHRtJNiCG_QhvYdtkb84'
+      apiKey: environment.API
     })
 
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}
