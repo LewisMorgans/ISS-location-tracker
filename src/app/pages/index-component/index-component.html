@@ -1,7 +1,13 @@
 <div class="container-fluid">
-    <div class="row mt-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto mt-5">
+            <h1>track the ISS</h1>
+            <h3>in real time...</h3>
+        </div>
+    </div>
+    <div class="row mt-4">
         <div class="col-md-6 mx-auto map">
-            <div class="card">
+            <div class="card shadow">
                 <agm-map (zoomChange)="updateZoomInput($event)" [zoom]="zoom"
                     [latitude]="(sateliteData$ | async)?.iss_position.latitude"
                     [longitude]="(sateliteData$ | async)?.iss_position.longitude">
@@ -24,10 +30,8 @@
                         geosynchronous orbit at at close to 28,000 km/h,<br>
                         at an altitude of 36,000 km!
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

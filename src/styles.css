@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: textFont;
+    src: url('./assets/fonts/MyriadPro-Light.otf')
+  }
+
+  @font-face {
+    font-family: titleFont;
+    src: url('./assets/fonts/BebasNeue-Regular.ttf')
+  }
+
 body {
-    background: #364f6b !important;
+    background: #202833 !important;
+}
+
+* {
+    font-family: textFont;
+    font-size: 18px
 }

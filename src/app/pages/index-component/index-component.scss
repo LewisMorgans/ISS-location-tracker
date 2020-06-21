@@ -1,19 +1,33 @@
-agm-map {
-  height: 50vh;
-}
-
 .container-fluid {
-  margin: 0px;
-  padding: 0px;
+  
+  color: #ffffff;
+
+  h1,
+  h3 {
+    font-family: titleFont;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    color: #66fcf1;
+  }
+
+  agm-map {
+    height: 50vh;
+  }
 
   .map {
     margin: 0px;
     padding: 0px;
-    border: 1px solid;
-    border-radius: 5px;
   }
 
-  agm-map {
-    border-radius: 55px;
+  .card {
+    border-color: #66fcf1;
+    margin: 5%;
+
+    .card-body {
+      background-color: #10292e;
+    }
+
   }
+
 }
