@@ -25,7 +25,7 @@ export class IndexComponent implements OnInit {
     this.initializeState();
   }
 
-  public updateZoomInput(event: number) {
+  public updateZoomInput(event: number): void {
     this.zoom = event;
   }
 
