@@ -3,6 +3,6 @@ interface ISSResponse {
         latitude: number,
         longitude: number
     },
-    message: string,
-    timestramp: number
+    message?: string,
+    timestramp?: number
 }

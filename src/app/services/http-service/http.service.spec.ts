@@ -18,19 +18,24 @@ describe(('HttpService Test'), () => {
 
     }));
 
-    it('Should make a GET request to the API and return lat long values', () => {
+    it('Should make a GET request to the API and return mock lat long values', () => {
+
+        const API = 'http://api.open-notify.org/iss-now.json';
 
         service.getLocation$()
             .subscribe(resp => {
-                expect(resp.iss_position).toContain('latitude', 'longitude');
+                expect(resp).toEqual({ iss_position: { latitude: 0.12345, longitude: -12345 } })
             })
 
-        const req = _httpMock.expectOne({
-            url: 'http://api.open-notify.org/iss-now.json',
+        const _req = _httpMock.expectOne({
+            url: API,
             method: 'GET'
+        }).flush({
+            iss_position: {
+                latitude: 0.12345,
+                longitude: -12345
+            }
         })
-
-        expect(req.request.method).toBe("GET");
 
     });
 
