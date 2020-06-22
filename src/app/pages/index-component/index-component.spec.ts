@@ -11,7 +11,6 @@ describe('IndexComponentComponent', () => {
     load: () => new Promise(resolve => resolve(true))
   }
 
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [IndexComponent],
@@ -29,7 +28,7 @@ describe('IndexComponentComponent', () => {
   });
 
 
-  it('should create', fakeAsync(() => {
+  it('The observale should be populated with the return value from the HTTP service', fakeAsync(() => {
     component.sateliteData$
       .subscribe(data => {
         expect(data.iss_position).toContain('latitude')
